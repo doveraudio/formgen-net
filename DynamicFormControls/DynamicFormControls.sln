@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicFormControls", "DynamicFormControls\DynamicFormControls.csproj", "{CF9111D4-A8BE-40AF-A489-C77081A36786}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94D90304-72E5-4127-AD3F-213F8EDA11DD} = {94D90304-72E5-4127-AD3F-213F8EDA11DD}
+		{AF4BE13F-4DD7-46EB-8A1C-3F7F87503734} = {AF4BE13F-4DD7-46EB-8A1C-3F7F87503734}
+		{C33793C7-C443-4B98-B1A4-0D237CB07875} = {C33793C7-C443-4B98-B1A4-0D237CB07875}
+		{08582CD9-9D17-4244-838D-3B36FF2D1041} = {08582CD9-9D17-4244-838D-3B36FF2D1041}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquirrelDB", "SquirrelDB\SquirrelDB\SquirrelDB.csproj", "{C33793C7-C443-4B98-B1A4-0D237CB07875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testSquirrels", "SquirrelDB\testSquirrels\testSquirrels.csproj", "{94D90304-72E5-4127-AD3F-213F8EDA11DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormDesigner", "FormDesigner\FormDesigner.csproj", "{08582CD9-9D17-4244-838D-3B36FF2D1041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormModel", "FormModel\FormModel.csproj", "{AF4BE13F-4DD7-46EB-8A1C-3F7F87503734}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9111D4-A8BE-40AF-A489-C77081A36786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9111D4-A8BE-40AF-A489-C77081A36786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9111D4-A8BE-40AF-A489-C77081A36786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9111D4-A8BE-40AF-A489-C77081A36786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C33793C7-C443-4B98-B1A4-0D237CB07875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33793C7-C443-4B98-B1A4-0D237CB07875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33793C7-C443-4B98-B1A4-0D237CB07875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33793C7-C443-4B98-B1A4-0D237CB07875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94D90304-72E5-4127-AD3F-213F8EDA11DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D90304-72E5-4127-AD3F-213F8EDA11DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D90304-72E5-4127-AD3F-213F8EDA11DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D90304-72E5-4127-AD3F-213F8EDA11DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08582CD9-9D17-4244-838D-3B36FF2D1041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08582CD9-9D17-4244-838D-3B36FF2D1041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08582CD9-9D17-4244-838D-3B36FF2D1041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08582CD9-9D17-4244-838D-3B36FF2D1041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4BE13F-4DD7-46EB-8A1C-3F7F87503734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4BE13F-4DD7-46EB-8A1C-3F7F87503734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4BE13F-4DD7-46EB-8A1C-3F7F87503734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4BE13F-4DD7-46EB-8A1C-3F7F87503734}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

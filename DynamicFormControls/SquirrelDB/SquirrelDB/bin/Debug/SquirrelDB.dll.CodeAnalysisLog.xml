@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Debug\SquirrelDB.dll">
+   <Modules>
+    <Module Name="squirreldb.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'SquirrelDB.dll' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'SquirrelDB.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="Squirrel">
+       <Types>
+        <Type Name="SquirrelDB" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'SquirrelDB' because it creates members of the following IDisposable types: 'DataSet', 'SQLiteConnection', 'DataTable'. If 'SquirrelDB' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="73">Be sure to set the DataSet Locale property wherever 'SquirrelDB.SquirrelDB()' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_dbDataSet" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB._dbDataSet' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#addColumn(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="add" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="166">Correct the casing of 'add' in member name 'SquirrelDB.addColumn(string)' by changing it to 'Add'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#addPrimaryKey(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="add" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="171">Correct the casing of 'add' in member name 'SquirrelDB.addPrimaryKey(string)' by changing it to 'Add'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#addTableToSet(System.Data.DataTable)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="77">'SquirrelDB.addTableToSet(DataTable)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="83">Modify 'SquirrelDB.addTableToSet(DataTable)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="85">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.addTableToSet(DataTable)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#addVartype(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="add" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="176">Correct the casing of 'add' in member name 'SquirrelDB.addVartype(string)' by changing it to 'Add'.</Issue>
+            </Message>
+            <Message Id="Vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="176">Correct the spelling of 'Vartype' in member name 'SquirrelDB.addVartype(string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="176">In method 'SquirrelDB.addVartype(string)', correct the spelling of 'vartype' in parameter name 'vartype' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Basepath" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Basepath" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="100">Correct the spelling of 'Basepath' in member name 'SquirrelDB.Basepath' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Columns" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="103">Change 'SquirrelDB.Columns' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="103">Change 'List&lt;string&gt;' in 'SquirrelDB.Columns' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#connectFactories()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="connect" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="181">Correct the casing of 'connect' in member name 'SquirrelDB.connectFactories()' by changing it to 'Connect'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#connectSqLite()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Sq" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="186">Correct the casing of 'Sq' in member name 'SquirrelDB.connectSqLite()' by changing it to 'SQ'.</Issue>
+            </Message>
+            <Message Id="connect" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="186">Correct the casing of 'connect' in member name 'SquirrelDB.connectSqLite()' by changing it to 'Connect'.</Issue>
+            </Message>
+            <Message Id="Sq" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="186">Correct the spelling of 'Sq' in member name 'SquirrelDB.connectSqLite()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#convertDataTypeSQLite(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="convert" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="195">Correct the casing of 'convert' in member name 'SquirrelDB.convertDataTypeSQLite(string)' by changing it to 'Convert'.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="195">The 'this' parameter (or 'Me' in Visual Basic) of 'SquirrelDB.convertDataTypeSQLite(string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="196">Because the behavior of 'string.ToLower()' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.convertDataTypeSQLite(string)' with a call to 'string.ToLower(CultureInfo)'. If the result of 'string.ToLower(CultureInfo)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="196">In externally visible method 'SquirrelDB.convertDataTypeSQLite(string)', validate parameter 'value' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#createLocalDatabase()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="264">Modify 'SquirrelDB.createLocalDatabase()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="create" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="250">Correct the casing of 'create' in member name 'SquirrelDB.createLocalDatabase()' by changing it to 'Create'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="251">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.createLocalDatabase()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="260">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.createLocalDatabase()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#createLocalTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="328">Modify 'SquirrelDB.createLocalTable()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="create" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="296">Correct the casing of 'create' in member name 'SquirrelDB.createLocalTable()' by changing it to 'Create'.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="319">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.createLocalTable()' could contain the following variables 'this._creationString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="liteCommand" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="296">'liteCommand', a variable declared in 'SquirrelDB.createLocalTable()', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#createRemoteDatabase()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="283">Modify 'SquirrelDB.createRemoteDatabase()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="create" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="271">Correct the casing of 'create' in member name 'SquirrelDB.createRemoteDatabase()' by changing it to 'Create'.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="274">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.createRemoteDatabase()' could contain the following variables 'this._database'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="274">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.createRemoteDatabase()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="273">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.createRemoteDatabase()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="myCommand" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="271">'myCommand', a variable declared in 'SquirrelDB.createRemoteDatabase()', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DbDataset" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Dataset" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="97">The discrete term 'Dataset' in member name 'SquirrelDB.DbDataset' should be expressed as a compound word, 'DataSet'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#deleteColumn(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="delete" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="338">Correct the casing of 'delete' in member name 'SquirrelDB.deleteColumn(string)' by changing it to 'Delete'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#deleteColumns(System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="delete" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="343">Correct the casing of 'delete' in member name 'SquirrelDB.deleteColumns(string[])' by changing it to 'Delete'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="344">In externally visible method 'SquirrelDB.deleteColumns(string[])', validate parameter 'columns' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#deletePrimaryKey(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="delete" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="351">Correct the casing of 'delete' in member name 'SquirrelDB.deletePrimaryKey(string)' by changing it to 'Delete'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#deletePrimaryKeys(System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="delete" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="356">Correct the casing of 'delete' in member name 'SquirrelDB.deletePrimaryKeys(string[])' by changing it to 'Delete'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="357">In externally visible method 'SquirrelDB.deletePrimaryKeys(string[])', validate parameter 'columns' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#deleteVartype(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="delete" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="364">Correct the casing of 'delete' in member name 'SquirrelDB.deleteVartype(string)' by changing it to 'Delete'.</Issue>
+            </Message>
+            <Message Id="Vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="364">Correct the spelling of 'Vartype' in member name 'SquirrelDB.deleteVartype(string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="364">In method 'SquirrelDB.deleteVartype(string)', correct the spelling of 'vartype' in parameter name 'vartype' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#deleteVartypes(System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="delete" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="369">Correct the casing of 'delete' in member name 'SquirrelDB.deleteVartypes(string[])' by changing it to 'Delete'.</Issue>
+            </Message>
+            <Message Id="Vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="369">Correct the spelling of 'Vartypes' in member name 'SquirrelDB.deleteVartypes(string[])' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="369">In method 'SquirrelDB.deleteVartypes(string[])', correct the spelling of 'vartypes' in parameter name 'vartypes' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="370">In externally visible method 'SquirrelDB.deleteVartypes(string[])', validate parameter 'vartypes' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getColumnsFromLocalTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="391">Correct the casing of 'get' in member name 'SquirrelDB.getColumnsFromLocalTable()' by changing it to 'Get'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getColumnsFromMySqlTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="380">Correct the casing of 'get' in member name 'SquirrelDB.getColumnsFromMySqlTable()' by changing it to 'Get'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getColumnString(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="402">Correct the casing of 'get' in member name 'SquirrelDB.getColumnString(string)' by changing it to 'Get'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getLocalTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="913">Correct the casing of 'get' in member name 'SquirrelDB.getLocalTable()' by changing it to 'Get'.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="924">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.getLocalTable()' could contain the following variables 'this._sql'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="935">Be sure to set the DataTable Locale property wherever 'SquirrelDB.getLocalTable()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="913">Change 'SquirrelDB.getLocalTable()' to a property if appropriate.</Issue>
+            </Message>
+            <Message Id="liteCommand" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="913">'liteCommand', a variable declared in 'SquirrelDB.getLocalTable()', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getMySqlTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="896">Correct the casing of 'get' in member name 'SquirrelDB.getMySqlTable()' by changing it to 'Get'.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="898">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.getMySqlTable()' could contain the following variables 'this._sql'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="907">Be sure to set the DataTable Locale property wherever 'SquirrelDB.getMySqlTable()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="896">Change 'SquirrelDB.getMySqlTable()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getPrimaryKeyString(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="414">Correct the casing of 'get' in member name 'SquirrelDB.getPrimaryKeyString(string)' by changing it to 'Get'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getVartypesFromLocalTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="451">Correct the casing of 'get' in member name 'SquirrelDB.getVartypesFromLocalTable()' by changing it to 'Get'.</Issue>
+            </Message>
+            <Message Id="Vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="451">Correct the spelling of 'Vartypes' in member name 'SquirrelDB.getVartypesFromLocalTable()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getVartypesFromRemoteTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="429">Correct the casing of 'get' in member name 'SquirrelDB.getVartypesFromRemoteTable()' by changing it to 'Get'.</Issue>
+            </Message>
+            <Message Id="Vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="429">Correct the spelling of 'Vartypes' in member name 'SquirrelDB.getVartypesFromRemoteTable()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getVartypeString(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="get" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="473">Correct the casing of 'get' in member name 'SquirrelDB.getVartypeString(string)' by changing it to 'Get'.</Issue>
+            </Message>
+            <Message Id="Vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="473">Correct the spelling of 'Vartype' in member name 'SquirrelDB.getVartypeString(string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#insertColumn(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="insert" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="485">Correct the casing of 'insert' in member name 'SquirrelDB.insertColumn(int, string)' by changing it to 'Insert'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#insertPrimaryKey(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="insert" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="490">Correct the casing of 'insert' in member name 'SquirrelDB.insertPrimaryKey(int, string)' by changing it to 'Insert'.</Issue>
+            </Message>
+            <Message Id="vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="490">In method 'SquirrelDB.insertPrimaryKey(int, string)', correct the spelling of 'vartype' in parameter name 'vartype' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#insertVartype(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="insert" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="495">Correct the casing of 'insert' in member name 'SquirrelDB.insertVartype(int, string)' by changing it to 'Insert'.</Issue>
+            </Message>
+            <Message Id="Vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="495">Correct the spelling of 'Vartype' in member name 'SquirrelDB.insertVartype(int, string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="vartype" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="495">In method 'SquirrelDB.insertVartype(int, string)', correct the spelling of 'vartype' in parameter name 'vartype' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#liteAdapter" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.liteAdapter' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#liteBuilder" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.liteBuilder' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#liteCommand" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.liteCommand' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#liteConnection" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.liteConnection' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#liteFac" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.liteFac' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+            <Message Id="Fac" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Fac' in member name 'SquirrelDB.liteFac' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#loadFactories()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="load" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="500">Correct the casing of 'load' in member name 'SquirrelDB.loadFactories()' by changing it to 'Load'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#myAdapter" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.myAdapter' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#myBuilder" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.myBuilder' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#myCommand" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.myCommand' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#myConnection" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.myConnection' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#myFactory" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'SquirrelDB.myFactory' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySqlConnectionString" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_MySqlConnectionString()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+               <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="124">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.MySqlConnectionString.get()' with a call to 'String.IsNullOrEmpty'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#PrimaryKey" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="139">Change 'SquirrelDB.PrimaryKey' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="139">Change 'List&lt;string&gt;' in 'SquirrelDB.PrimaryKey' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#readLocalPrimaryKeys()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="961">'SquirrelDB.readLocalPrimaryKeys()' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#removeTableFromSet(System.Data.DataTable)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="91">'SquirrelDB.removeTableFromSet(DataTable)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="93">Modify 'SquirrelDB.removeTableFromSet(DataTable)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="93">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.removeTableFromSet(DataTable)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setColumns()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="514">Correct the casing of 'set' in member name 'SquirrelDB.setColumns()' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setColumns(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="506">Change 'List&lt;string&gt;' in 'SquirrelDB.setColumns(List&lt;string&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="506">Correct the casing of 'set' in member name 'SquirrelDB.setColumns(List&lt;string&gt;)' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setColumns(System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="509">Correct the casing of 'set' in member name 'SquirrelDB.setColumns(string[])' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setMySqlConnectionString(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterShouldBeCompoundWord" Certainty="80" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="545">In member 'SquirrelDB.setMySqlConnectionString(string, string, string, string)', the discrete term 'username' in parameter name 'username' should be expressed as a compound word, 'userName'.</Issue>
+            </Message>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="545">Replace method 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="545">Correct the casing of 'set' in member name 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' by changing it to 'Set'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="578">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="546">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="554">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="562">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="570">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setMySqlConnectionString(string, string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setPrimaryKey()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="527">Correct the casing of 'set' in member name 'SquirrelDB.setPrimaryKey()' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setPrimaryKey(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="519">Change 'List&lt;string&gt;' in 'SquirrelDB.setPrimaryKey(List&lt;string&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="519">Correct the casing of 'set' in member name 'SquirrelDB.setPrimaryKey(List&lt;string&gt;)' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setPrimaryKey(System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="522">Correct the casing of 'set' in member name 'SquirrelDB.setPrimaryKey(string[])' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setSelectStatement()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="532">Correct the casing of 'set' in member name 'SquirrelDB.setSelectStatement()' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setSqliteConnectionString(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="583">Replace method 'SquirrelDB.setSqliteConnectionString(string, string, string)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="583">Correct the casing of 'set' in member name 'SquirrelDB.setSqliteConnectionString(string, string, string)' by changing it to 'Set'.</Issue>
+            </Message>
+            <Message Id="Sqlite" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="583">Correct the spelling of 'Sqlite' in member name 'SquirrelDB.setSqliteConnectionString(string, string, string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="basepath" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="583">In method 'SquirrelDB.setSqliteConnectionString(string, string, string)', correct the spelling of 'basepath' in parameter name 'basepath' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="608">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.setSqliteConnectionString(string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="584">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setSqliteConnectionString(string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="592">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setSqliteConnectionString(string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="600">Replace the call to 'string.operator ==(string, string)' in 'SquirrelDB.setSqliteConnectionString(string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setTablename(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="613">Correct the casing of 'set' in member name 'SquirrelDB.setTablename(string)' by changing it to 'Set'.</Issue>
+            </Message>
+            <Message Id="Tablename" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="613">Correct the spelling of 'Tablename' in member name 'SquirrelDB.setTablename(string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setupLiteTable()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="979">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.setupLiteTable()' could contain the following variables 'this._sql'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setupMysqlTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="setup" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="991">Correct the casing of 'setup' in member name 'SquirrelDB.setupMysqlTable()' by changing it to 'Setup'.</Issue>
+            </Message>
+            <Message Id="Mysql" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="991">Correct the spelling of 'Mysql' in member name 'SquirrelDB.setupMysqlTable()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="993">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.setupMysqlTable()' could contain the following variables 'this._sql'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setVartypes()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="621">Correct the casing of 'set' in member name 'SquirrelDB.setVartypes()' by changing it to 'Set'.</Issue>
+            </Message>
+            <Message Id="Vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="621">Correct the spelling of 'Vartypes' in member name 'SquirrelDB.setVartypes()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setVartypes(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="618">Change 'List&lt;string&gt;' in 'SquirrelDB.setVartypes(List&lt;string&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="618">Correct the casing of 'set' in member name 'SquirrelDB.setVartypes(List&lt;string&gt;)' by changing it to 'Set'.</Issue>
+            </Message>
+            <Message Id="Vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="618">Correct the spelling of 'Vartypes' in member name 'SquirrelDB.setVartypes(List&lt;string&gt;)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message Id="vartypes" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="618">In method 'SquirrelDB.setVartypes(List&lt;string&gt;)', correct the spelling of 'vartypes' in parameter name 'vartypes' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SQL" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SQL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="142">Correct the casing of 'SQL' in member name 'SquirrelDB.SQL' by changing it to 'Sql'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateRemoteDB()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="651">Modify 'SquirrelDB.TranslateRemoteDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="663">Modify 'SquirrelDB.TranslateRemoteDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="701">Modify 'SquirrelDB.TranslateRemoteDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="count" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="677">'SquirrelDB.TranslateRemoteDB()' declares a variable, 'count', of type 'int', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="630">The query string passed to 'DbCommand.CommandText.set(string)' in 'SquirrelDB.TranslateRemoteDB()' could contain the following variables 'this._sql'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="665">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.TranslateRemoteDB()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="665">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.TranslateRemoteDB()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="liteCommand" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="DependsOnFix">
+             <Issue Name="Local" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="626">'liteCommand', a variable declared in 'SquirrelDB.TranslateRemoteDB()', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateLocalDB()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="718">Modify 'SquirrelDB.UpdateLocalDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="730">Modify 'SquirrelDB.UpdateLocalDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="752">Modify 'SquirrelDB.UpdateLocalDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="row" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="743">'SquirrelDB.UpdateLocalDB()' declares a variable, 'row', of type 'DataRow', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="732">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.UpdateLocalDB()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="732">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.UpdateLocalDB()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateLocalDB(System.Data.DataTable)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="768">Modify 'SquirrelDB.UpdateLocalDB(DataTable)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="802">Modify 'SquirrelDB.UpdateLocalDB(DataTable)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="datatable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="759">In method 'SquirrelDB.UpdateLocalDB(DataTable)', correct the spelling of 'datatable' in parameter name 'datatable' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRemoteDB()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="854">Modify 'SquirrelDB.UpdateRemoteDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="866">Modify 'SquirrelDB.UpdateRemoteDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="886">Modify 'SquirrelDB.UpdateRemoteDB()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="row" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="879">'SquirrelDB.UpdateRemoteDB()' declares a variable, 'row', of type 'DataRow', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="868">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.UpdateRemoteDB()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="868">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.UpdateRemoteDB()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRemoteDB(System.Data.DataTable)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="821">Modify 'SquirrelDB.UpdateRemoteDB(DataTable)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="837">Modify 'SquirrelDB.UpdateRemoteDB(DataTable)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="Table" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="809">In member 'SquirrelDB.UpdateRemoteDB(DataTable)', correct the casing of 'Table' in parameter name 'Table' by changing it to 'table'.</Issue>
+            </Message>
+            <Message Id="row" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="830">'SquirrelDB.UpdateRemoteDB(DataTable)' declares a variable, 'row', of type 'DataRow', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="823">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.UpdateRemoteDB(DataTable)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="823">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'SquirrelDB.UpdateRemoteDB(DataTable)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Username" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="160">The discrete term 'Username' in member name 'SquirrelDB.Username' should be expressed as a compound word, 'UserName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#VarTypes" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="163">Change 'SquirrelDB.VarTypes' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2014-07-07 13:33:02Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="e:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB" File="SquirrelDB.cs" Line="163">Change 'List&lt;string&gt;' in 'SquirrelDB.VarTypes' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+   <Name>Collection properties should be read only</Name>
+   <Description>Properties that return collections should be read-only so that users cannot entirely replace the backing store. Users can still modify the contents of the collection by calling relevant methods on the collection. Note that the XmlSerializer class has special support for deserializing read-only collections. See the XmlSerializer overview for more information.</Description>
+   <Resolution Name="Default">Change {0} to be read-only by removing the property setter.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182327.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberParameterShouldBeCompoundWord">In member {0}, the discrete term '{1}' in parameter name {2} should be expressed as a compound word, '{3}'.</Resolution>
+   <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026">
+   <Name>Default parameters should not be used</Name>
+   <Description>Some programming languages do not support default parameters. Replace default parameters with method overloads that supply the default argument.</Description>
+   <Resolution Name="Default">Replace method {0} with an overload that supplies all default arguments.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182135.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>Do not declare visible instance fields</Name>
+   <Description>Instance fields that are visible outside of the type that declares them, limit your ability to change the implementation details for those data items. Use properties instead. They do not compromise usability or performance and they do provide flexibility in that they conceal the implementation details of the underlying data.</Description>
+   <Resolution Name="Default">Because field {0} is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182141.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="MemberParameter">In member {0}, correct the casing of '{1}' in parameter name {2} by changing it to '{3}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+   <Name>Set locale for data types</Name>
+   <Description>In most cases, Locale should be explicitly set to CultureInfo.InvariantCulture on DataSet and DataTable instances. Upon creation of a DataSet or DataTable instance, the Locale is set to the current culture. In most cases, the Locale should be set to CultureInfo.InvariantCulture to guarantee proper sorting behavior in all cultures.</Description>
+   <Resolution Name="Default">Be sure to set the {0} Locale property wherever {1} creates an instance of that type.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182188.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304">
+   <Name>Specify CultureInfo</Name>
+   <Description>If an overload exists that takes a CultureInfo argument, it should always be called in favor of an overload that does not. The CultureInfo type contains culture-specific information required for performing numeric and string operations, such as casing, formatting, and string comparisons. In scenarios where conversion and parsing behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182189.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+   <Name>Test for empty strings using string length</Name>
+   <Description>To test for empty strings, check if String.Length is equal to zero. Constructs such as "".Equals(someString) and String.Empty.Equals(someString) are less efficient than testing the string length. Replace these with checks for someString.Length == 0.</Description>
+   <Resolution Name="IsNullOrEmpty">Replace the call to {0} in {1} with a call to 'String.IsNullOrEmpty'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182279.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Types that own disposable fields should be disposable</Name>
+   <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+   <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+   <Name>Use properties where appropriate</Name>
+   <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+   <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182181.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500">
+   <Name>Variable names should not match field names</Name>
+   <Description>Instance field and variable names should not be identical within the same scope.</Description>
+   <Resolution Name="Local">{0}, a variable declared in {1}, has the same name as an instance field on the type. Change the name of one of these items.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182216.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

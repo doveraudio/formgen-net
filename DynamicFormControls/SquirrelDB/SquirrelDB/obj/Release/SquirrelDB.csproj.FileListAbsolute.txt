@@ -1,0 +1,17 @@
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\x64\SQLite.Interop.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\x86\SQLite.Interop.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\SquirrelDB.dll.config
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\SquirrelDB.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\SquirrelDB.pdb
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\EntityFramework.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\EntityFramework.SqlServer.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\MySql.Data.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\System.Data.SQLite.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\System.Data.SQLite.EF6.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\System.Data.SQLite.Linq.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\EntityFramework.xml
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\EntityFramework.SqlServer.xml
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\bin\Release\System.Data.SQLite.xml
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\obj\Release\SquirrelDB.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\obj\Release\SquirrelDB.pdb
+E:\code\csharp\DynamicFormControls\DynamicFormControls\SquirrelDB\SquirrelDB\obj\Release\SquirrelDB.csprojResolveAssemblyReference.cache

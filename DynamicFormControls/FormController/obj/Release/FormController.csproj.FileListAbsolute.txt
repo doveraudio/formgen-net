@@ -1,0 +1,13 @@
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\bin\Release\FormController.exe.config
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\bin\Release\FormController.exe
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\bin\Release\FormController.pdb
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\MainWindow.baml
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\MainWindow.g.cs
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\App.g.cs
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController_MarkupCompile.cache
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController.g.resources
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController.Properties.Resources.resources
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController.csproj.GenerateResource.Cache
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController.exe
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController.pdb
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormController\obj\Release\FormController.csprojResolveAssemblyReference.cache
