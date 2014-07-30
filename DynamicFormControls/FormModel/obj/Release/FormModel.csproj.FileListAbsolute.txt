@@ -11,3 +11,10 @@ E:\code\csharp\DynamicFormControls\DynamicFormControls\FormModel\bin\Release\New
 E:\code\csharp\DynamicFormControls\DynamicFormControls\FormModel\obj\Release\FormModel.csprojResolveAssemblyReference.cache
 E:\code\csharp\DynamicFormControls\DynamicFormControls\FormModel\obj\Release\FormModel.dll
 E:\code\csharp\DynamicFormControls\DynamicFormControls\FormModel\obj\Release\FormModel.pdb
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\bin\Release\FormModel.dll.config
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\bin\Release\FormModel.dll
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\bin\Release\FormModel.pdb
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\bin\Release\Newtonsoft.Json.dll
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\obj\Release\FormModel.csprojResolveAssemblyReference.cache
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\obj\Release\FormModel.dll
+C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormModel\obj\Release\FormModel.pdb

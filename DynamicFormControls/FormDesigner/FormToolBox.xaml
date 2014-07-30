@@ -1,139 +1,171 @@
 ﻿<Window x:Class="FormDesigner.FormToolBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FormToolBox" Height="855.5" Width="493">
+        Title="FormToolBox" Height="887" Width="922">
     <Grid>
-        <Button x:Name="ButtonApply" Content="Apply Changes" HorizontalAlignment="Left" Margin="10,763,0,0" VerticalAlignment="Top" Width="465" Height="53" Click="ButtonApply_Click" />
-        <StackPanel x:Name="StackPanelLeftColumn" HorizontalAlignment="Left" Height="748" Margin="10,10,0,0" VerticalAlignment="Top" Width="227">
-            <Label Content="Field Name" />
-            <TextBox x:Name="TextBoxName" />
-            <Label Content="Field Label" />
-            <TextBox x:Name="TextBoxLabel" />
-            <Label Content="Field Database Column" />
-            <TextBox x:Name="TextBoxColumn" />
-            <Label Content="Field Value" />
-            <TextBox x:Name="TextBoxValue" />
-            <Label Content="Database Type" />
-            <ListBox x:Name="ListBoxDatabaseType" Height="72">
-                <ListBoxItem x:Name="DBchar" Selected="setVarType">CHAR[Length]</ListBoxItem>
-                <ListBoxItem x:Name="DBvarchar" Selected="setVarType">VARCHAR(Length)</ListBoxItem>
-                <ListBoxItem x:Name="DBtext" Selected="setVarType">TEXT</ListBoxItem>
-                <ListBoxItem x:Name="DBmediumtext" Selected="setVarType">MEDIUMTEXT</ListBoxItem>
-                <ListBoxItem x:Name="DBlongtext" Selected="setVarType">LONGTEXT</ListBoxItem>
-                <ListBoxItem x:Name="DBint" Selected="setVarType">INT[Length]</ListBoxItem>
-                <ListBoxItem x:Name="DBdouble" Selected="setVarType">DOUBLE[Length, Decimals]</ListBoxItem>
-                <ListBoxItem x:Name="DBdecimal" Selected="setVarType">DECIMAL[Length, Decimals]</ListBoxItem>
-                <ListBoxItem x:Name="DBdate" Selected="setVarType">DATE (YYYY-MM-DD)</ListBoxItem>
-                <ListBoxItem x:Name="DBdatetime" Selected="setVarType">DATETIME (YYYY-MM-DD HH:MM:SS)</ListBoxItem>
-                <ListBoxItem x:Name="DBtime" Selected="setVarType">TIME (HH:MM:SS)</ListBoxItem>
-            </ListBox>
-            <Grid Height="107" x:Name="GridSize">
-                <Slider x:Name="SliderMValue" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Minimum="0" ValueChanged="SliderMValue_ValueChanged" SmallChange="1" />
-                <TextBox x:Name="TextBoxMValue" HorizontalAlignment="Left" Height="23" Margin="12,45,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="88" KeyUp="TextBoxMValue_KeyUp" />
-                <TextBlock x:Name="TextBlockInteger" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="Numerical Places" VerticalAlignment="Top" />
-                <GridSplitter x:Name="GridSplit" HorizontalAlignment="Left" Height="100" Margin="110,0,0,0" VerticalAlignment="Top" Width="5" />
-                <Slider x:Name="SliderDValue" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="75" Minimum="0"  ValueChanged="SliderDValue_ValueChanged" SmallChange="1" />
-                <TextBlock x:Name="TextBlockDecimal" HorizontalAlignment="Left" Margin="120,81,0,0" TextWrapping="Wrap" Text="Decimal Places" VerticalAlignment="Top" />
-                <TextBox x:Name="TextBoxDValue" HorizontalAlignment="Left" Height="23" Margin="120,45,0,0" TextWrapping="Wrap"   Text="" VerticalAlignment="Top" Width="87" KeyUp="TextBoxDValue_KeyUp" />
-            </Grid>
+        <TabControl HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Width="700" Height="auto">
+            <TabItem Header="Field Database" Width="auto" Height="auto">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="ButtonApply" Content="Apply Changes" HorizontalAlignment="Left" Margin="10,763,0,0" VerticalAlignment="Top" Width="465" Height="53" Click="ButtonApply_Click" />
+                    <StackPanel x:Name="StackPanelLeftColumn" HorizontalAlignment="Left" Height="748" Margin="10,10,0,0" VerticalAlignment="Top" Width="227">
+                        <Label Content="Field Name" />
+                        <TextBox x:Name="TextBoxName" />
+                        <Label Content="Field Label" />
+                        <TextBox x:Name="TextBoxLabel" />
+                        <Label Content="Field Database Column" />
+                        <TextBox x:Name="TextBoxColumn" />
+                        <Label Content="Field Value" />
+                        <TextBox x:Name="TextBoxValue" />
+                        <Label Content="Database Type" />
+                        <ListBox x:Name="ListBoxDatabaseType" Height="72">
+                            <ListBoxItem x:Name="DBchar" Selected="setVarType">CHAR[Length]</ListBoxItem>
+                            <ListBoxItem x:Name="DBvarchar" Selected="setVarType">VARCHAR[Length]</ListBoxItem>
+                            <ListBoxItem x:Name="DBtext" Selected="setVarType">TEXT[Length]</ListBoxItem>
+                            <ListBoxItem x:Name="DBmediumtext" Selected="setVarType">MEDIUMTEXT[Length]</ListBoxItem>
+                            <ListBoxItem x:Name="DBlongtext" Selected="setVarType">LONGTEXT[Length]</ListBoxItem>
+                            <ListBoxItem x:Name="DBint" Selected="setVarType">INT[Length]</ListBoxItem>
+                            <ListBoxItem x:Name="DBdouble" Selected="setVarType">DOUBLE[Length, Decimals]</ListBoxItem>
+                            <ListBoxItem x:Name="DBdecimal" Selected="setVarType">DECIMAL[Length, Decimals]</ListBoxItem>
+                            <ListBoxItem x:Name="DBdate" Selected="setVarType">DATE (YYYY-MM-DD)</ListBoxItem>
+                            <ListBoxItem x:Name="DBdatetime" Selected="setVarType">DATETIME (YYYY-MM-DD HH:MM:SS)</ListBoxItem>
+                            <ListBoxItem x:Name="DBtime" Selected="setVarType">TIME (HH:MM:SS)</ListBoxItem>
+                        </ListBox>
+                        <Grid Height="107" x:Name="GridSize">
+                            <Slider x:Name="SliderMValue" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Minimum="0" ValueChanged="SliderMValue_ValueChanged" SmallChange="1" />
+                            <TextBox x:Name="TextBoxMValue" HorizontalAlignment="Left" Height="23" Margin="12,45,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="88" KeyUp="TextBoxMValue_KeyUp" />
+                            <TextBlock x:Name="TextBlockInteger" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="Numerical Places" VerticalAlignment="Top" />
+                            <GridSplitter x:Name="GridSplit" HorizontalAlignment="Left" Height="100" Margin="110,0,0,0" VerticalAlignment="Top" Width="5" />
+                            <Slider x:Name="SliderDValue" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="75" Minimum="0"  ValueChanged="SliderDValue_ValueChanged" SmallChange="1" />
+                            <TextBlock x:Name="TextBlockDecimal" HorizontalAlignment="Left" Margin="120,81,0,0" TextWrapping="Wrap" Text="Decimal Places" VerticalAlignment="Top" />
+                            <TextBox x:Name="TextBoxDValue" HorizontalAlignment="Left" Height="23" Margin="120,45,0,0" TextWrapping="Wrap"   Text="" VerticalAlignment="Top" Width="87" KeyUp="TextBoxDValue_KeyUp" />
+                        </Grid>
 
-            <Grid Height="222">
 
-                <Label Content="Form Background Color" Margin="5,96,75,0" Height="26" VerticalAlignment="Top"/>
-                <Rectangle x:Name="RectangleFormBackgroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="195,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
-                <Slider x:Name="SliderFormBackgroundRed" Minimum="0" Maximum="255" Margin="4,122,163,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormBackgroundRed_ValueChanged" />
-                <Slider x:Name="SliderFormBackgroundGreen" Minimum="0" Maximum="255" Margin="69,122,98,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormBackgroundGreen_ValueChanged" />
-                <Slider x:Name="SliderFormBackgroundBlue" Minimum="0" Maximum="255" Margin="134,122,33,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormBackgroundBlue_ValueChanged" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Height="623" Margin="242,10,0,0" VerticalAlignment="Top" Width="227">
+                        <Label Content="Table Name" />
+                        <TextBox x:Name="TextBoxTableName" />
+                        <Label Content="Form Field Type"/>
+                        <ComboBox x:Name="ComboBoxFieldType">
 
-                <Label Content="Form Border Color" Margin="4,34,89,0" Height="26" VerticalAlignment="Top"/>
-                <Rectangle x:Name="RectangleFormBorderColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="195,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
-                <Slider x:Name="SliderFormBorderRed" Minimum="0" Maximum="255" Margin="4,65,163,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormBorderRed_ValueChanged" />
-                <Slider x:Name="SliderFormBorderGreen" Minimum="0" Maximum="255" Margin="69,65,98,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormBorderGreen_ValueChanged" />
-                <Slider x:Name="SliderFormBorderBlue" Minimum="0" Maximum="255" Margin="134,65,33,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormBorderBlue_ValueChanged" />
+                        </ComboBox>
+                        <Label Content="Key Column Name"/>
+                        <TextBox x:Name="TextBoxKeyName" />
+                        <Label Content="Key Table Name" />
+                        <TextBox x:Name="TextBoxKeyTableName"/>
+                        <Label Content="Key Value"/>
+                        <TextBox x:Name="TextBoxKeyValue" Height="26"/>
 
-                <Label Content="Form Foreground Color" Margin="0,160,93,0" Height="26" VerticalAlignment="Top"/>
-                <Rectangle x:Name="RectangleFormForegroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="195,191,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
-                <Slider x:Name="SliderFormForegroundRed" Minimum="0" Maximum="255" Margin="0,191,167,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormForegroundRed_ValueChanged" />
-                <Slider x:Name="SliderFormForegroundGreen" Minimum="0" Maximum="255" Margin="65,191,102,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormForegroundGreen_ValueChanged" />
-                <Slider x:Name="SliderFormForegroundBlue" Minimum="0" Maximum="255" Margin="130,191,37,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFormForegroundBlue_ValueChanged" />
-                <TextBox x:Name="TextBoxFormTitle" HorizontalAlignment="Left" Height="23" Margin="65,10,0,0" TextWrapping="Wrap" Text="Form Title" VerticalAlignment="Top" Width="152"/>
-                <TextBlock HorizontalAlignment="Left" Margin="5,13,0,0" TextWrapping="Wrap" Text="Form Title" VerticalAlignment="Top" Width="59"/>
+                    </StackPanel>
 
-            </Grid>
-            <Grid Height="94">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="168*"/>
-                    <ColumnDefinition Width="59*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Form Width" Margin="0,2,83,0" Height="26" VerticalAlignment="Top" />
-                <Label Content="Form Height" HorizontalAlignment="Right" Margin="0,2,31,0" Height="26" VerticalAlignment="Top" Grid.ColumnSpan="2" />
-                <Slider x:Name="SliderFormWidth" Margin="0,33,83,0"  Height="24" VerticalAlignment="Top" ValueChanged="SliderFormWidth_ValueChanged"/>
-                <TextBox x:Name="TextBoxFormWidth" Margin="0,62,83,0"  Height="22" VerticalAlignment="Top" KeyUp="TextBoxWidth_KeyUp"/>
-                <Slider x:Name="SliderFormHeight" Margin="0,33,8,0" Width="85" HorizontalAlignment="Right"  Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2" ValueChanged="SliderFormHeight_ValueChanged"/>
-                <TextBox x:Name="TextBoxFormHeight" Margin="132,62,10,0"  Height="22" VerticalAlignment="Top" Grid.ColumnSpan="2" KeyUp="TextBoxHeight_KeyUp"/>
-            </Grid>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="623" Margin="242,10,0,0" VerticalAlignment="Top" Width="227">
-            <Label Content="Table Name" />
-            <TextBox x:Name="TextBoxTableName" />
-            <Label Content="Form Field Type"/>
-            <ComboBox x:Name="ComboBoxFieldType">
+                </Grid>
+            </TabItem>
+            <TabItem Header="Field Style" Width="auto" Height="auto">
+                <Grid>
+                    <StackPanel>
+                        <Grid Height="94">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="168*"/>
+                                <ColumnDefinition Width="59*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="X Position" Margin="0,2,438,0" Height="33" VerticalAlignment="Top" />
+                            <Label Content="Y Position" HorizontalAlignment="Right" Margin="0,2,294,0" Height="33" VerticalAlignment="Top" />
+                            <Slider x:Name="SliderXPosition" Margin="4,35,379,0" ValueChanged="SliderXPosition_ValueChanged" Height="23" Width="128" VerticalAlignment="Top"/>
+                            <TextBox x:Name="TextBoxXPosition" Margin="4,62,379,0" KeyUp="TextBoxXPosition_KeyUp" Height="23" Width="128" VerticalAlignment="Top"/>
+                            <Slider x:Name="SliderYPosition" Margin="0,34,228,0" HorizontalAlignment="Right" ValueChanged="SliderYPosition_ValueChanged" Height="23" Width="128" VerticalAlignment="Top"/>
+                            <TextBox x:Name="TextBoxYPosition" Margin="155,62,228,0" KeyUp="TextBoxYPosition_KeyUp" Height="23" Width="128" VerticalAlignment="Top"/>
+                        </Grid>
+                        <Grid Height="94">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="168*"/>
+                                <ColumnDefinition Width="59*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Width" Margin="0,2,459,0" Height="26" VerticalAlignment="Top" />
+                            <Label Content="Height" HorizontalAlignment="Right" Margin="0,2,310,0" Height="26" VerticalAlignment="Top" />
+                            <Slider x:Name="SliderFieldWidth" Margin="4,33,379,0"  Width="128" Height="22" VerticalAlignment="Top" ValueChanged="SliderFieldWidth_ValueChanged"/>
+                            <TextBox x:Name="TextBoxFieldWidth" Margin="4,62,379,0" Width="128" Height="22" VerticalAlignment="Top" KeyUp="TextBoxWidth_KeyUp"/>
+                            <Slider x:Name="SliderFieldHeight" Margin="0,33,229,0" Width="128" HorizontalAlignment="Right"  Height="24" VerticalAlignment="Top" ValueChanged="SliderFieldHeight_ValueChanged"/>
+                            <TextBox x:Name="TextBoxFieldHeight" Margin="154,62,229,0" Width="128" Height="22" VerticalAlignment="Top" KeyUp="TextBoxHeight_KeyUp"/>
+                        </Grid>
+                        <Grid Height="63">
+                            <Label Content="Border Color" Margin="0,0,120,0" Height="26" VerticalAlignment="Top"/>
+                            <Rectangle x:Name="RectangleFieldBorderColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="3,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
+                            <Slider x:Name="SliderFieldBorderRed" Minimum="0" Maximum="255" Margin="36,31,590,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldBorderRed_ValueChanged" />
+                            <Slider x:Name="SliderFieldBorderGreen" Minimum="0" Maximum="255" Margin="102,31,524,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldBorderGreen_ValueChanged" />
+                            <Slider x:Name="SliderFieldBorderBlue" Minimum="0" Maximum="255" Margin="168,31,458,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldBorderBlue_ValueChanged" />
+                        </Grid>
 
-            </ComboBox>
-            <Label Content="Key Column Name"/>
-            <TextBox x:Name="TextBoxKeyName" />
-            <Label Content="Key Table Name" />
-            <TextBox x:Name="TextBoxKeyTableName"/>
-            <Label Content="Key Value"/>
-            <TextBox x:Name="TextBoxKeyValue" Height="26"/>
-            <Grid Height="94">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="168*"/>
-                    <ColumnDefinition Width="59*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="X Position" Margin="0,2,105,0" Height="33" VerticalAlignment="Top" />
-                <Label Content="Y Position" HorizontalAlignment="Right" Margin="0,2,31,0" Height="33" VerticalAlignment="Top" Grid.ColumnSpan="2" />
-                <Slider x:Name="SliderXPosition" Margin="0,33,83,0" ValueChanged="SliderXPosition_ValueChanged" Height="33" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBoxXPosition" Margin="0,62,83,0" KeyUp="TextBoxXPosition_KeyUp" Height="23" VerticalAlignment="Top"/>
-                <Slider x:Name="SliderYPosition" Margin="0,33,8,0" Width="85" HorizontalAlignment="Right" ValueChanged="SliderYPosition_ValueChanged" Height="33" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                <TextBox x:Name="TextBoxYPosition" Margin="132,62,10,0" KeyUp="TextBoxYPosition_KeyUp" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            </Grid>
-            <Grid Height="94">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="168*"/>
-                    <ColumnDefinition Width="59*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Width" Margin="0,2,105,0" Height="26" VerticalAlignment="Top" />
-                <Label Content="Height" HorizontalAlignment="Right" Margin="0,2,31,0" Height="26" VerticalAlignment="Top" Grid.ColumnSpan="2" />
-                <Slider x:Name="SliderFieldWidth" Margin="0,33,83,0"  Height="24" VerticalAlignment="Top" ValueChanged="SliderFieldWidth_ValueChanged"/>
-                <TextBox x:Name="TextBoxFieldWidth" Margin="0,62,83,0"  Height="22" VerticalAlignment="Top" KeyUp="TextBoxWidth_KeyUp"/>
-                <Slider x:Name="SliderFieldHeight" Margin="0,33,8,0" Width="85" HorizontalAlignment="Right"  Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2" ValueChanged="SliderFieldHeight_ValueChanged"/>
-                <TextBox x:Name="TextBoxFieldHeight" Margin="132,62,10,0"  Height="22" VerticalAlignment="Top" Grid.ColumnSpan="2" KeyUp="TextBoxHeight_KeyUp"/>
-            </Grid>
-            <Grid Height="63">
-                <Label Content="Border Color" Margin="0,0,120,0" Height="26" VerticalAlignment="Top"/>
-                <Rectangle x:Name="RectangleFieldBorderColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="195,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
-                <Slider x:Name="SliderFieldBorderRed" Minimum="0" Maximum="255" Margin="0,31,167,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldBorderRed_ValueChanged" />
-                <Slider x:Name="SliderFieldBorderGreen" Minimum="0" Maximum="255" Margin="65,31,102,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldBorderGreen_ValueChanged" />
-                <Slider x:Name="SliderFieldBorderBlue" Minimum="0" Maximum="255" Margin="130,31,37,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldBorderBlue_ValueChanged" />
-            </Grid>
+                        <Grid Height="63">
+                            <Label Content="Background Color" Margin="0,0,121,0" Height="26" VerticalAlignment="Top"/>
+                            <Rectangle x:Name="RectangleFieldBackgroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="4,26,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
+                            <Slider x:Name="SliderFieldBackgroundRed" Minimum="0" Maximum="255" Margin="38,26,588,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldBackgroundRed_ValueChanged" />
+                            <Slider x:Name="SliderFieldBackgroundGreen" Minimum="0" Maximum="255" Margin="104,26,522,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldBackgroundGreen_ValueChanged" />
+                            <Slider x:Name="SliderFieldBackgroundBlue" Minimum="0" Maximum="255" Margin="168,26,458,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldBackgroundBlue_ValueChanged" />
+                        </Grid>
 
-            <Grid Height="63">
-                <Label Content="Background Color" Margin="0,0,121,0" Height="26" VerticalAlignment="Top"/>
-                <Rectangle x:Name="RectangleFieldBackgroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="195,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
-                <Slider x:Name="SliderFieldBackgroundRed" Minimum="0" Maximum="255" Margin="0,31,167,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldBackgroundRed_ValueChanged" />
-                <Slider x:Name="SliderFieldBackgroundGreen" Minimum="0" Maximum="255" Margin="65,31,102,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldBackgroundGreen_ValueChanged" />
-                <Slider x:Name="SliderFieldBackgroundBlue" Minimum="0" Maximum="255" Margin="130,31,37,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldBackgroundBlue_ValueChanged" />
-            </Grid>
+                        <Grid Height="63">
+                            <Label Content="Foreground Color" Margin="0,0,119,0" Height="26" VerticalAlignment="Top"/>
+                            <Rectangle x:Name="RectangleFieldForegroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="2,27,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
+                            <Slider x:Name="SliderFieldForegroundRed" Minimum="0" Maximum="255" Margin="36,27,590,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldForegroundRed_ValueChanged" />
+                            <Slider x:Name="SliderFieldForegroundGreen" Minimum="0" Maximum="255" Margin="102,27,524,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldForegroundGreen_ValueChanged" />
+                            <Slider x:Name="SliderFieldForegroundBlue" Minimum="0" Maximum="255" Margin="166,27,460,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFieldForegroundBlue_ValueChanged" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
 
-            <Grid Height="63">
-                <Label Content="Foreground Color" Margin="0,0,119,0" Height="26" VerticalAlignment="Top"/>
-                <Rectangle x:Name="RectangleFieldForegroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="195,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="28"/>
-                <Slider x:Name="SliderFieldForegroundRed" Minimum="0" Maximum="255" Margin="0,31,167,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldForegroundRed_ValueChanged" />
-                <Slider x:Name="SliderFieldForegroundGreen" Minimum="0" Maximum="255" Margin="65,31,102,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldForegroundGreen_ValueChanged" />
-                <Slider x:Name="SliderFieldForegroundBlue" Minimum="0" Maximum="255" Margin="130,31,37,0" Height="26" VerticalAlignment="Top" ValueChanged="SliderFieldForegroundBlue_ValueChanged" />
-            </Grid>
-        </StackPanel>
+            </TabItem>
+            <TabItem Header="Form Style">
+                <Grid Width="auto" Height="auto">
+                    <StackPanel>
+                        <Grid Height="auto" Width="auto">
+                            <TextBlock HorizontalAlignment="Left" Margin="5,13,0,0" TextWrapping="Wrap" Text="Form Title" VerticalAlignment="Top" Width="59"/>
+                            <StackPanel>
+                                <TextBox x:Name="TextBoxFormTitle" HorizontalAlignment="Left" Height="23" Margin="65,10,0,0" TextWrapping="Wrap" Text="Form Title" VerticalAlignment="Top" />
+
+                            </StackPanel>
+
+                        </Grid>
+                        <Grid Height="auto" Width="auto">
+
+                            <Label Content="Form Background Color" Margin="278,96,262,0" Height="24" VerticalAlignment="Top"/>
+                            <Rectangle x:Name="RectangleFormBackgroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="24" Width="64" Margin="0,119,0,0" Stroke="Black" VerticalAlignment="Top" />
+                            <Slider x:Name="SliderFormBackgroundRed" Minimum="0" Maximum="255" Margin="82,119,544,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormBackgroundRed_ValueChanged" />
+                            <Slider x:Name="SliderFormBackgroundGreen" Minimum="0" Maximum="255" Margin="148,119,478,0" Height="26" Width="64"  VerticalAlignment="Top" ValueChanged="SliderFormBackgroundGreen_ValueChanged" />
+                            <Slider x:Name="SliderFormBackgroundBlue" Minimum="0" Maximum="255" Margin="220,122,406,0" Height="26" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormBackgroundBlue_ValueChanged" />
+                        </Grid>
+                        <Grid Height="auto" Width="auto">
+                            <Label Content="Form Border Color" Margin="2,19,432,0" Width="256" Height="24" VerticalAlignment="Top"/>
+                            <Rectangle x:Name="RectangleFormBorderColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="24" Width="64" Margin="0,48,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                            <Slider x:Name="SliderFormBorderRed" Minimum="0" Maximum="255" Margin="82,51,544,0" Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormBorderRed_ValueChanged" />
+                            <Slider x:Name="SliderFormBorderGreen" Minimum="0" Maximum="255" Margin="150,51,476,0" Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormBorderGreen_ValueChanged" />
+                            <Slider x:Name="SliderFormBorderBlue" Minimum="0" Maximum="255" Margin="220,48,406,0" Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormBorderBlue_ValueChanged" />
+                        </Grid>
+                        <Grid Height="auto" Width="auto">
+                            <Label Content="Form Foreground Color" Margin="266,160,262,0" Height="24" VerticalAlignment="Top"/>
+                            <Rectangle x:Name="RectangleFormForegroundColor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="24" Width="64" Margin="0,188,0,0" Stroke="Black" VerticalAlignment="Top" />
+                            <Slider x:Name="SliderFormForegroundRed" Minimum="0" Maximum="255" Margin="82,188,544,0" Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormForegroundRed_ValueChanged" />
+                            <Slider x:Name="SliderFormForegroundGreen" Minimum="0" Maximum="255" Margin="65,191,102,0" Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormForegroundGreen_ValueChanged" />
+                            <Slider x:Name="SliderFormForegroundBlue" Minimum="0" Maximum="255" Margin="150,188,476,0" Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormForegroundBlue_ValueChanged" />
+
+                        </Grid>
+
+                        <Grid Height="94">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="168*"/>
+                                <ColumnDefinition Width="59*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Form Width" Margin="182,2,254,0" Height="24" VerticalAlignment="Top" />
+                            <Label Content="Form Height" HorizontalAlignment="Right" Margin="0,2,10,0" Height="24" Width="85" VerticalAlignment="Top" Grid.Column="1" />
+                            <Slider x:Name="SliderFormWidth" Margin="0,33,83,0"  Height="24" Width="64" VerticalAlignment="Top" ValueChanged="SliderFormWidth_ValueChanged"/>
+                            <TextBox x:Name="TextBoxFormWidth" Margin="0,62,83,0"  Height="24" Width="64" VerticalAlignment="Top" KeyUp="TextBoxWidth_KeyUp"/>
+                            <Slider x:Name="SliderFormHeight" Margin="0,33,8,0" HorizontalAlignment="Right"  Height="24" Width="64" VerticalAlignment="Top" Grid.ColumnSpan="2" ValueChanged="SliderFormHeight_ValueChanged"/>
+                            <TextBox x:Name="TextBoxFormHeight" Margin="132,62,10,0"  Height="24" Width="64" VerticalAlignment="Top" Grid.ColumnSpan="2" KeyUp="TextBoxHeight_KeyUp"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="nilfornow"></TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
