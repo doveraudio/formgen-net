@@ -106,3 +106,5 @@ C:\Users\Dover\Documents\Visual Studio 2013\Projects\work\DynamicFormControls\Dy
 C:\Users\Dover\Documents\Visual Studio 2013\Projects\work\DynamicFormControls\DynamicFormControls\DynamicFormControls\obj\Release\DynamicFormControls.g.resources
 C:\Users\Dover\Documents\Visual Studio 2013\Projects\work\DynamicFormControls\DynamicFormControls\DynamicFormControls\obj\Release\DynamicFormControls.Properties.Resources.resources
 C:\Users\Dover\Documents\Visual Studio 2013\Projects\work\DynamicFormControls\DynamicFormControls\DynamicFormControls\obj\Release\DynamicFormControls.csproj.GenerateResource.Cache
+E:\code\csharp\DynamicFormControls\DynamicFormControls\DynamicFormControls\bin\Release\FormModel.dll
+E:\code\csharp\DynamicFormControls\DynamicFormControls\DynamicFormControls\bin\Release\FormModel.pdb

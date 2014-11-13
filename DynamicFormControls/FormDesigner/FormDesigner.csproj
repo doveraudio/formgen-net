@@ -57,6 +57,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +71,9 @@
     </Compile>
     <Compile Include="FormToolBox.xaml.cs">
       <DependentUpon>FormToolBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormView.xaml.cs">
+      <DependentUpon>FormView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

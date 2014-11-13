@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button Content="Open Form" HorizontalAlignment="Left" Margin="248,250,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click" BorderBrush="Black" Background="White" Height="41" />
-        <ListBox x:Name="customersListBox" HorizontalAlignment="Left" Height="201" Margin="24,27,0,0" VerticalAlignment="Top" Width="465"/>
+        <ListBox x:Name="customersListBox" HorizontalAlignment="Left" Height="201" Margin="24,27,0,0" VerticalAlignment="Top" Width="465" />
         <Button x:Name="customersButton" Content="Get Customers" HorizontalAlignment="Left" Margin="24,250,0,0" VerticalAlignment="Top" Width="124" BorderBrush="Black" Background="White" Height="41" Click="customersButton_Click" />
         <Button x:Name="NewButton" Content="New Form" HorizontalAlignment="Left" Margin="383,250,0,0" VerticalAlignment="Top" Width="124" BorderBrush="Black" Background="White" Height="41" Click="NewButton_Click" />
     </Grid>

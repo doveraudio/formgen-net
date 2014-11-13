@@ -43,11 +43,11 @@ namespace Squirrel
         private List<string> _vartypes;
         private DataTable dTable;
         /*
-         * 
+         *
          * SQLite variables
-         * 
+         *
          */
-        
+
         public DataSet _dbDataSet;
         public DbDataAdapter liteAdapter;
         public DbCommandBuilder liteBuilder;
@@ -182,10 +182,12 @@ namespace Squirrel
             myConnection = myFactory.CreateConnection();
             liteConnection = liteFac.CreateConnection();
         }
+
         public void connectSqLite()
         {
             liteConnection = liteFac.CreateConnection();
         }
+
         /// <summary>
         /// Converts a .net datatype in string form to a SQLite variant type.
         /// </summary>
@@ -267,6 +269,7 @@ namespace Squirrel
                 return false;
             }
         }
+
         public bool createRemoteDatabase()
         {
             DbCommand myCommand = myFactory.CreateCommand();
@@ -278,7 +281,6 @@ namespace Squirrel
                 myConnection.Open();
                 myCommand.ExecuteNonQuery();
                 myConnection.Close();
-                
             }
             catch (Exception ex)
             {
@@ -287,8 +289,8 @@ namespace Squirrel
             }
 
             return true;
-        
         }
+
         /// <summary>
         /// Creates a table in the local database using the specified columns, vartypes, and constraints. Specify primary key in the List of String with the primary key.
         /// </summary>
@@ -387,6 +389,7 @@ namespace Squirrel
                 addColumn(col.ColumnName);
             }
         }
+
         public void getColumnsFromLocalTable()
         {
             setColumns();
@@ -398,6 +401,7 @@ namespace Squirrel
                 addColumn(col.ColumnName);
             }
         }
+
         public string getColumnString(string delimiter)
         {
             string result = "";
@@ -447,6 +451,7 @@ namespace Squirrel
                 addVartype(vartype);
             }
         }
+
         public void getVartypesFromLocalTable()
         {
             setVartypes();
@@ -469,6 +474,7 @@ namespace Squirrel
                 addVartype(vartype);
             }
         }
+
         public string getVartypeString(string delimiter)
         {
             string result = "";
@@ -514,7 +520,7 @@ namespace Squirrel
         {
             _columns.Clear();
         }
-        
+
         public void setPrimaryKey(List<string> columns)
         { _primaryKey = columns; }
 
@@ -638,8 +644,7 @@ namespace Squirrel
             liteAdapter.InsertCommand = liteBuilder.GetInsertCommand();
             liteAdapter.UpdateCommand = liteBuilder.GetUpdateCommand();
             liteAdapter.DeleteCommand = liteBuilder.GetDeleteCommand();
-            
-            
+
             Log = ("Connecting to SQLite Database file\r\n");
             try
             {
@@ -666,11 +671,9 @@ namespace Squirrel
             }
             try
             {
-                
-               // liteCommand = liteFac.CreateCommand();
+                // liteCommand = liteFac.CreateCommand();
                 //liteAdapter = liteFac.CreateDataAdapter();
 
-                
                 dTable = getMySqlTable();
                 // di it work?
                 //System.Console.WriteLine(dTable.Rows.Count);
@@ -682,16 +685,14 @@ namespace Squirrel
                     int columnCount = dTable.Columns.Count;
 
                     liteCommand.Connection = liteConnection;
-                    
-                    for(int row=0;row<rowCount;row++)
+
+                    for (int row = 0; row < rowCount; row++)
                     {
-                        for (int column = 0; column < columnCount;column++)
+                        for (int column = 0; column < columnCount; column++)
                         {
                             liteAdapter.InsertCommand.Parameters[column].Value = dTable.Rows[row][column];
-                            
-
                         }
-                    //liteCommand.ExecuteNonQuery();
+                        //liteCommand.ExecuteNonQuery();
                         liteAdapter.InsertCommand.ExecuteNonQuery();
                     }
                     tran.Commit();
@@ -753,8 +754,8 @@ namespace Squirrel
             {
                 Log = ("Database Reading Failed\r\n" + ex.Message);
             }
-            
         }
+
         public void UpdateLocalDB(DataTable datatable)
         {
             setSelectStatement();
@@ -772,7 +773,6 @@ namespace Squirrel
 
             Log = ("Updating Table for mysql transfer\r\n");
 
-            
             try
             {
                 dTable = datatable;
@@ -789,7 +789,6 @@ namespace Squirrel
                         {
                             parameter.Value = row[i];
                             i++;
-
                         }
 
                         liteAdapter.InsertCommand.ExecuteNonQuery();
@@ -803,8 +802,8 @@ namespace Squirrel
             {
                 Log = ("Database Reading Failed\r\n" + ex.Message);
             }
-
         }
+
         public void UpdateRemoteDB(DataTable Table)
         {
             dTable = Table;
@@ -841,6 +840,7 @@ namespace Squirrel
             myConnection.Close();
             myConnection.Dispose();
         }
+
         public void UpdateRemoteDB()
         {
             setSelectStatement();
@@ -888,10 +888,10 @@ namespace Squirrel
                 Log = ("Database Reading Failed\r\n" + ex.Message);
             }
             myConnection.Close();
-            
+
             myConnection.Dispose();
-            
         }
+
         public DataTable getMySqlTable()
         {
             myCommand = myFactory.CreateCommand();
@@ -902,30 +902,35 @@ namespace Squirrel
             myBuilder = myFactory.CreateCommandBuilder();
             myBuilder.DataAdapter = myAdapter;
             myAdapter.InsertCommand = myBuilder.GetInsertCommand();
-            myAdapter.UpdateCommand = myBuilder.GetUpdateCommand();
-            myAdapter.DeleteCommand = myBuilder.GetDeleteCommand();
+            try
+            {
+                myAdapter.UpdateCommand = myBuilder.GetUpdateCommand();
+            }
+            catch { }
+            try
+            {
+                myAdapter.DeleteCommand = myBuilder.GetDeleteCommand();
+            }
+            catch { }
             dTable = new DataTable();
             myAdapter.FillSchema(dTable, System.Data.SchemaType.Source);
             myAdapter.Fill(dTable);
             return dTable;
         }
+
         public DataTable getLocalTable()
         {
-           
-            
             if (liteConnection.State == ConnectionState.Open)
             {
-
-               liteConnection.Close();
-
+                liteConnection.Close();
             }
-            
+
             DbCommand liteCommand = liteFac.CreateCommand();
             liteCommand.CommandText = _sql;
             liteCommand.Connection = liteConnection;
             liteCommand.Connection.Open();
             liteAdapter = liteFac.CreateDataAdapter();
-            
+
             liteAdapter.SelectCommand = liteCommand;
             liteBuilder = liteFac.CreateCommandBuilder();
             liteBuilder.DataAdapter = liteAdapter;
@@ -933,7 +938,7 @@ namespace Squirrel
             liteAdapter.UpdateCommand = liteBuilder.GetUpdateCommand();
             liteAdapter.DeleteCommand = liteBuilder.GetDeleteCommand();
             dTable = new DataTable();
-            
+
             //liteAdapter.FillSchema(dTable, System.Data.SchemaType.Mapped);
 
             //dTable.Constraints.Clear();
@@ -941,6 +946,7 @@ namespace Squirrel
             liteAdapter.Fill(dTable);
             return dTable;
         }
+
         private void readRemotePrimaryKeys()
         {
             getColumnsFromMySqlTable();
@@ -957,6 +963,7 @@ namespace Squirrel
                 }
             }
         }
+
         private void readLocalPrimaryKeys()
         {
             getColumnsFromLocalTable();
@@ -973,6 +980,7 @@ namespace Squirrel
                 }
             }
         }
+
         private void setupLiteTable()
         {
             liteCommand = liteFac.CreateCommand();
@@ -1000,7 +1008,6 @@ namespace Squirrel
             myAdapter.InsertCommand = myBuilder.GetInsertCommand();
             myAdapter.UpdateCommand = myBuilder.GetUpdateCommand();
             myAdapter.DeleteCommand = myBuilder.GetDeleteCommand();
-        
         }
     }
 }

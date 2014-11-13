@@ -33,3 +33,5 @@ C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormDesigner\obj\Rel
 C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormDesigner\obj\Release\FormDesigner.csproj.GenerateResource.Cache
 C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormDesigner\obj\Release\FormToolBox.baml
 C:\Code\csharp\work\DynamicFormControls\DynamicFormControls\FormDesigner\obj\Release\FormToolBox.g.cs
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormDesigner\obj\Release\FormView.baml
+E:\code\csharp\DynamicFormControls\DynamicFormControls\FormDesigner\obj\Release\FormView.g.cs

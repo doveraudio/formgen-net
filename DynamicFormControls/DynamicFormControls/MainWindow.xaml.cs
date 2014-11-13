@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using FormModeller;
+using MySql.Data.MySqlClient;
 using Squirrel;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Data.SQLite;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using FormModeller;
+
 namespace DynamicFormControls
 {
     /// <summary>
@@ -28,11 +29,12 @@ namespace DynamicFormControls
         private DataTable dt;
         private FormModel myFormModel;
         private FormField myFormField;
+
         public MainWindow()
         {
             InitializeComponent();
             sDB = new SquirrelDB();
-            
+
             sDB.loadFactories();
             sDB.connectFactories();
             sDB.Basepath = "C:\\SquirrelDB\\Databases\\";
@@ -44,7 +46,6 @@ namespace DynamicFormControls
             sDB.setMySqlConnectionString();
             sDB.setSqliteConnectionString();
             sDB.setSelectStatement();
-            
         }
 
         private void populateListbox()
@@ -91,26 +92,22 @@ namespace DynamicFormControls
                 myForm.Controls.Add(c);
             }
         }
+
         /// <summary>
         /// Loads form from current file, and displays it.
         /// </summary>
         private void getControlsFromFormModel()
-        { 
-        
-        
-        
+        {
         }
 
         private void createControls()
         {
-
             string[] cols = sDB.Columns.ToArray();
-            
+
             foreach (string s in cols)
             {
                 CrudControl c = new CrudControl();
 
-                    
                 c.Database = "clientDB";
                 c.Tablename = sDB.Table;
                 c.WpfControl = new TextBox();
@@ -129,16 +126,13 @@ namespace DynamicFormControls
 
                 c.Value = dt.Rows[customersListBox.SelectedIndex].ItemArray[dt.Columns[s].Ordinal].ToString();
                 myForm.Controls.Add(c);
-
             }
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (customersListBox.SelectedIndex > -1)
             {
-
                 myForm = new DynamicForm();
                 configForm();
                 createControls();
@@ -170,6 +164,7 @@ namespace DynamicFormControls
                 MessageBox.Show("Select an item.");
             }
         }
+
         private void NewButton_Click(object sender, RoutedEventArgs e)
         {
             myForm = new DynamicForm();
@@ -194,9 +189,8 @@ namespace DynamicFormControls
             scr.Content = myForm.Panel;
             myForm.Window.Content = scr;
             myForm.Window.Show();
-
-
         }
+
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             sDB.setupMysqlTable();
@@ -210,12 +204,10 @@ namespace DynamicFormControls
                 {
                     c.Value = null;
                     c.setTextValue(null);
-                    
                 }
                 //sDB.myAdapter.UpdateCommand;
                 for (int i = 0; i < myForm.Controls.Count; i++)
                 {
-
                     if (!dt.Rows[customersListBox.SelectedIndex].Table.Constraints.Contains(dt.Columns[i].ColumnName))
                     {
                         try
@@ -230,16 +222,12 @@ namespace DynamicFormControls
                             }
                             catch (Exception)
                             {
-
                                 try
                                 {
-
                                     dt.Rows[customersListBox.SelectedIndex][i] = new MySql.Data.Types.MySqlDateTime();
                                 }
-
                                 catch (Exception)
                                 {
-
                                     throw;
                                 }
                             }
@@ -248,7 +236,6 @@ namespace DynamicFormControls
                             sDB.myConnection.Close();
                             myForm.Panel.Children.Add(new Label() { Content = "form submitted" });
                             submitted = true;
-
                         }
                     }
                 }
@@ -257,6 +244,7 @@ namespace DynamicFormControls
 
             myForm.updateMySql();
         }
+
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             if (!submitted)
@@ -266,7 +254,7 @@ namespace DynamicFormControls
                     sDB.liteConnection = new SQLiteConnection(sDB.SQLiteConnectionString);
                     sDB.liteCommand = sDB.liteFac.CreateCommand();
                 }
-                
+
                 //6sDB.liteConnection.Open();
                 DateTime date;
                 sDB.liteAdapter.UpdateCommand.Prepare();
@@ -302,7 +290,6 @@ namespace DynamicFormControls
         {
             if (!submitted)
             {
-
                 DataRow newrow = dt.NewRow();
 
                 int NewRowIndex = dt.Rows.Count;
@@ -336,7 +323,6 @@ namespace DynamicFormControls
                         myForm.Panel.Children.Add(new Label() { Content = "form submitted" });
                         submitted = true;
                     }
-
                 }
             }
         }
@@ -352,7 +338,6 @@ namespace DynamicFormControls
                 customersListBox.Items.Add(row[1].ToString());
             }
         }
-
     }
 }
 
@@ -386,6 +371,7 @@ internal class DynamicForm
     public DbConnection liteConnection;
 
     private DbProviderFactory liteFac;
+
     public DynamicForm()
     {
         this._window = new Window();
@@ -393,11 +379,12 @@ internal class DynamicForm
         this.Controls = new List<CrudControl>();
         this._controls = new List<CrudControl>();
         this._window.Content = this._panel;
-        
     }
 
     public DataSet Tables { get { return _tables; } set { _tables = value; } }
-    public List<string> Columns {get{return _columns;}set{_columns = value;}}
+
+    public List<string> Columns { get { return _columns; } set { _columns = value; } }
+
     public int FormHeight { get { return _formHeight; } set { _formHeight = value; } }
 
     public int FormWidth { get { return _formWidth; } set { _formWidth = value; } }
@@ -415,19 +402,22 @@ internal class DynamicForm
     public SolidColorBrush BackgroundColor { get; set; }
 
     public int Index { get; set; }
-    public string Table{get{return _table;}set {_table = value;}}
-    public void setSelectStatement()
-        {
-            _sql = "SELECT";
 
-            _sql += " ";
-            foreach (string column in _columns)
-            {
-                _sql += "`" + column + "`" + ", ";
-            }
-            _sql = _sql.Substring(0, _sql.Length - 2);
-            _sql += " FROM " + _table + ";";
+    public string Table { get { return _table; } set { _table = value; } }
+
+    public void setSelectStatement()
+    {
+        _sql = "SELECT";
+
+        _sql += " ";
+        foreach (string column in _columns)
+        {
+            _sql += "`" + column + "`" + ", ";
         }
+        _sql = _sql.Substring(0, _sql.Length - 2);
+        _sql += " FROM " + _table + ";";
+    }
+
     /// <summary>
     /// updates a MySql database table from a form control;
     /// </summary>
@@ -436,7 +426,6 @@ internal class DynamicForm
     {
         MySqlConnection mycon = new MySqlConnection();
 
-    
         MySqlCommand myCmd = new MySqlCommand();
         myCmd.Parameters.Add(control.Columnname, control.MysqlDataType).Value = control.Value;
         //mycon.Open();
@@ -447,66 +436,56 @@ internal class DynamicForm
     private void createInsert(CrudControl control)
     {
         liteConnection = new SQLiteConnection(_connectString);
-            setSelectStatement();
-            DbCommand liteCommand = liteFac.CreateCommand();
-            liteCommand.CommandText = _sql;
-            liteCommand.Connection = liteConnection;
-            liteCommand.Connection.Open();
-            liteAdapter = liteFac.CreateDataAdapter();
+        setSelectStatement();
+        DbCommand liteCommand = liteFac.CreateCommand();
+        liteCommand.CommandText = _sql;
+        liteCommand.Connection = liteConnection;
+        liteCommand.Connection.Open();
+        liteAdapter = liteFac.CreateDataAdapter();
 
-            liteAdapter.SelectCommand = liteCommand;
-            liteBuilder = liteFac.CreateCommandBuilder();
-            liteBuilder.DataAdapter = liteAdapter;
-            liteAdapter.InsertCommand = liteBuilder.GetInsertCommand();
-            liteAdapter.UpdateCommand = liteBuilder.GetUpdateCommand();
-            liteAdapter.DeleteCommand = liteBuilder.GetDeleteCommand();
-            
-           
-            try
-            {
-                liteConnection.Open();
-               
-            }
-            catch (Exception ex)
-            {
-               
-            }
-            try
-            {
-              
-                int count = 0;
-                
-                using (IDbTransaction tran = liteConnection.BeginTransaction())
-                {
-                    int rowCount = Tables.Tables[index].Rows.Count;
-                    int columnCount = Tables.Tables[index].Columns.Count;
+        liteAdapter.SelectCommand = liteCommand;
+        liteBuilder = liteFac.CreateCommandBuilder();
+        liteBuilder.DataAdapter = liteAdapter;
+        liteAdapter.InsertCommand = liteBuilder.GetInsertCommand();
+        liteAdapter.UpdateCommand = liteBuilder.GetUpdateCommand();
+        liteAdapter.DeleteCommand = liteBuilder.GetDeleteCommand();
 
-                    liteCommand.Connection = liteConnection;
-                    
-                    for(int row=0;row<rowCount;row++)
-                    {
-                        for (int column = 0; column < columnCount;column++)
-                        {
-                            liteAdapter.InsertCommand.Parameters[column].Value = Tables.Tables[index].Rows[row][column];
-                            
-
-                        }
-                    //liteCommand.ExecuteNonQuery();
-                        liteAdapter.InsertCommand.ExecuteNonQuery();
-                    }
-                    tran.Commit();
-                    count = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-              
-            }
-            liteConnection.Close();
+        try
+        {
+            liteConnection.Open();
         }
+        catch (Exception ex)
+        {
+        }
+        try
+        {
+            int count = 0;
 
+            using (IDbTransaction tran = liteConnection.BeginTransaction())
+            {
+                int rowCount = Tables.Tables[index].Rows.Count;
+                int columnCount = Tables.Tables[index].Columns.Count;
 
-   
+                liteCommand.Connection = liteConnection;
+
+                for (int row = 0; row < rowCount; row++)
+                {
+                    for (int column = 0; column < columnCount; column++)
+                    {
+                        liteAdapter.InsertCommand.Parameters[column].Value = Tables.Tables[index].Rows[row][column];
+                    }
+                    //liteCommand.ExecuteNonQuery();
+                    liteAdapter.InsertCommand.ExecuteNonQuery();
+                }
+                tran.Commit();
+                count = 0;
+            }
+        }
+        catch (Exception ex)
+        {
+        }
+        liteConnection.Close();
+    }
 
     public void updateMySql()
     {
@@ -523,7 +502,6 @@ internal class DynamicForm
     /// <param name="control"></param>
     public string provideControlValue(CrudControl control)
     {
-        
         return control.Value;
     }
 
@@ -534,9 +512,6 @@ internal class DynamicForm
             provideControlValue(c);
         }
     }
-
-
-
 }
 
 /// <summary>

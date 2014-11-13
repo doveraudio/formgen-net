@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
-using System.Windows;
-
-
 
 namespace FormModeller
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             FormModel form = new FormModel();
             form.Title = "My New Form";
@@ -42,7 +33,7 @@ namespace FormModeller
             FormIO.Form = form;
             FormIO.Filepath = "C:\\Forms\\";
             FormIO.save();
-            
+
             Console.ReadKey(true);
             string filename = FormIO.Filepath + form.Title.Replace(" ", "_") + ".json";
             Console.Write(readFile(filename));
@@ -62,10 +53,8 @@ namespace FormModeller
             using (StreamReader fs = new StreamReader(filename))
             {
                 result = fs.ReadToEnd();
-             
             }
             return result;
         }
     }
-
 }
